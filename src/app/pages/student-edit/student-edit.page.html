@@ -1,0 +1,36 @@
+<!-- student-edit.page.html -->
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Edit Student</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input [(ngModel)]="data.name" placeholder="Enter Name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Age</ion-label>
+    <ion-input [(ngModel)]="data.age" placeholder="Enter Age"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Address</ion-label>
+    <ion-input [(ngModel)]="data.address" placeholder="Enter Address"></ion-input>
+  </ion-item>
+  <ion-row>
+    <ion-col size="6">
+      <ion-button (click)="update()" color="success" expand='block'>
+        Update
+      </ion-button>
+    </ion-col>
+
+    <ion-col size="6">
+      <ion-button [routerLink]="[ '/student-list']" color="danger" expand='block'>
+        Cancel
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

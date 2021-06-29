@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>List All Students</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="1">Id</ion-col>
+    <ion-col size="2.5">Name</ion-col>
+    <ion-col size="1.5">Age</ion-col>
+    <ion-col size="3">Address</ion-col>
+    <ion-col size="4">Actions</ion-col>
+  </ion-row>
+
+  <ion-row *ngFor="let item of studentData; let i = index">
+    <ion-col size="1">{{i+1}}</ion-col>
+    <ion-col size="2.5">{{item.name}}</ion-col>
+    <ion-col size="1.5">{{item.age}}</ion-col>
+    <ion-col size="3">{{item.address}}</ion-col>
+    <ion-col size="4">
+      <ion-row>
+        <ion-col size="6">
+          <ion-button color='warning' routerLink='/student-edit/{{item.id}}'>
+            <ion-icon name="create"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-button color='danger' (click)='delete(item)'>
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-button expand="block" routerLink='/student-create'>
+    Add New Student
+  </ion-button>
+</ion-content>
